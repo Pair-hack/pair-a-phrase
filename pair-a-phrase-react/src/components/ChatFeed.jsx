@@ -18,9 +18,7 @@ function ChatFeed(props) {
   //           float: isMyMessage ? "right" : "left",
   //           backgroundImage: `url(${person?.person?.avatar})`,
   //         }}
-  //       >
-  //         read
-  //       </div>
+  //       />
   //     );
   //   });
   // };
