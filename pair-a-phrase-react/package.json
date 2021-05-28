@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@ant-design/icons": "^4.6.2",
-    "axios": "^0.21.1",
-    "react-chat-engine": "^1.9.2"
-  }
-}
