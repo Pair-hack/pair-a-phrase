@@ -1,10 +1,17 @@
 import './App.css';
 import { ChatEngine } from 'react-chat-engine';
+import stringTranslator from "./helperfunctions/stringTranslator";
 import ChatFeed from './components/ChatFeed';
 import LoginForm from "./components/LoginForm";
 
+
 function App() {
   if(!localStorage.getItem("username")) return <LoginForm/>
+
+  stringTranslator("This app is great", "en", "fj")
+    .then((response) => {
+      console.log("stringTranslator: ", response.data[0].translations[1].text)
+    })
 
   return (
     <ChatEngine
