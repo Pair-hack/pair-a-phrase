@@ -1,9 +1,12 @@
 import './App.css';
 import { ChatEngine } from 'react-chat-engine';
 import stringTranslator from "./helperfunctions/stringTranslator";
-// import ChatFeed from './components/ChatFeed'
+import ChatFeed from './components/ChatFeed';
+import LoginForm from "./components/LoginForm";
+
 
 function App() {
+  if(!localStorage.getItem("username")) return <LoginForm/>
 
   stringTranslator("This app is great", "en", "fj")
     .then((response) => {
@@ -14,9 +17,9 @@ function App() {
     <ChatEngine
       height="100vh"
       projectID="8b2efd59-f1b9-458d-89d4-616c2e6e6713"
-      userName="luke"
-      userSecret="password"
-      // renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
+      userName={localStorage.getItem("username")}
+      userSecret={localStorage.getItem("password")}
+      renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
     />
   );
 }
