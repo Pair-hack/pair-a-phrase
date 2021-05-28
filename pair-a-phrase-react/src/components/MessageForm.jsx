@@ -1,3 +1,4 @@
+import { SendOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { sendMessage, isTyping } from "react-chat-engine";
 
@@ -28,6 +29,9 @@ function MessageForm(props) {
         onChange={onChangeHandler}
         onSubmit={submitHandler}
       />
+      <button type="submit" className="send-button">
+        <SendOutlined classname="send-icon" />
+      </button>
     </form>
   );
 }
