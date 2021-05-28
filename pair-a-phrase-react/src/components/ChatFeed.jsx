@@ -20,7 +20,14 @@ function ChatFeed(props) {
       return (
         <div key={`msg_${index}`} style={{ width: "100%" }}>
           <div className="message-block">
-            {isUserMessage ? <UserMessage /> : <IncomingMessage />}
+            {isUserMessage ? (
+              <UserMessage message={message} />
+            ) : (
+              <IncomingMessage
+                message={message}
+                lastMessage={messages[lastMessageKey]}
+              />
+            )}
           </div>
           <div
             className="read--reciepts"
@@ -47,6 +54,10 @@ function ChatFeed(props) {
         </div>
       </div>
       {renderMessages()}
+      <div style={{ height: "100px" }} />
+      <div classname="message-form-container">
+        <MessageForm {...props} chatId={activeChat} />
+      </div>
     </div>
   );
 }
