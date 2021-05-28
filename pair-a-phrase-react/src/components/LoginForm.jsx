@@ -4,20 +4,22 @@ import { useState } from "react";
 const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const authObject = {"Project-ID": "8b2efd59-f1b9-458d-89d4-616c2e6e6713", "User-Name": username, "User-Secret": password}
+        const authObject = { "Project-ID": "8b2efd59-f1b9-458d-89d4-616c2e6e6713", "User-Name": username, "User-Secret": password }
 
-        try {
-            axios.get("https://api.chatengine.io/chats", { headers: authObject });
+        axios.get("https://api.chatengine.io/chats", { headers: authObject })
+        .then(()=>{
             localStorage.setItem("username", username);
             localStorage.setItem("password", password);
-
             window.location.reload();
-        } catch (err) {
+        })
+        .catch((err)=>{
             console.log(err);
-        }
+            setError("Oops! incorrect username/password");
+        });
     }
 
     return (
@@ -32,6 +34,7 @@ const LoginForm = () => {
                             <span>Start Chatting</span>
                         </button>
                     </div>
+                    <h2 className="error">{error}</h2>
                 </form>
             </div>
         </div>
