@@ -10,7 +10,7 @@ function App() {
       projectID="8b2efd59-f1b9-458d-89d4-616c2e6e6713"
       userName="devmac"
       userSecret="password"
-    //renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
+      renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
     />
   );
 }
