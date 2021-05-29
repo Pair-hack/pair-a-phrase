@@ -12,12 +12,15 @@ function Navbar() {
   useEffect(()=>{
     setRL(randomLang());
     console.log(RL);
+  }, []);
+
+  useEffect(()=>{
     stringTranslator("paraphrase", 'en', RL )
     .then((response)=>{
       setTranslation(response.data[0].translations[1].text);
       console.log(response.data[0].translations[1].text);
     });
-  }, []);
+  }, [RL]);
 
   return (
     <div
