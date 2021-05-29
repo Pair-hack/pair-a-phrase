@@ -8,12 +8,12 @@ import SimpleSelect from './components/SimpleSelect';
 
 
 function App() {
-  if(!localStorage.getItem("username")) return <LoginForm/>
+  if (!localStorage.getItem("username")) return <LoginForm />
 
-  stringTranslator("This app is great", "en", "fj")
-    .then((response) => {
-      console.log("stringTranslator: ", response.data[0].translations[1].text)
-    })
+  // stringTranslator("This app is great", "en", "fj")
+  //   .then((response) => {
+  //     console.log("stringTranslator: ", response.data[0].translations[1].text)
+  //   })
 
   return (
     <>
