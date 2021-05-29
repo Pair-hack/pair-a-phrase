@@ -4,14 +4,21 @@ import { sendMessage, isTyping } from "react-chat-engine";
 
 function MessageForm(props) {
   const [inputVal, setInputVal] = useState("");
-  const { chatId, creds } = props;
+  const { chatId, creds, language } = props;
 
+  //console.log(props);
+
+  //console.log(creds);
   const submitHandler = (event) => {
     event.preventDefault();
 
     const text = inputVal.trim();
-    if (text.length > 0) sendMessage(creds, chatId, { text });
-
+    if (text.length > 0)
+      sendMessage(creds, chatId, {
+        text,
+        custom_json: language,
+      });
+    //message.sender.language = "en";
     setInputVal("");
   };
   const onChangeHandler = (event) => {

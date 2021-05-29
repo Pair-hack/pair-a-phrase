@@ -5,7 +5,7 @@ import SimpleSelect from "./SimpleSelect";
 import { useEffect, useRef } from "react";
 
 function ChatFeed(props) {
-  const { chats, activeChat, userName, messages } = props;
+  const { chats, activeChat, userName, messages, language } = props;
 
   //find current chat
   const chat = chats && chats[activeChat];
