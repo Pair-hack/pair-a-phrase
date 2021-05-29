@@ -87,16 +87,23 @@ function ChatFeed(props) {
         }}
       >
         <div>
-          <div style={{
-            color: "white"
-          }} className="chat-title">{chat.title}</div>
-          <div className="chat-subtitle" style={{
-            color: "white"
-          }}>
+          <div
+            style={{
+              color: "white",
+            }}
+            className="chat-title"
+          >
+            {chat.title}
+          </div>
+          <div
+            className="chat-subtitle"
+            style={{
+              color: "white",
+            }}
+          >
             {chat.people.map((person) => `${person.person.username} `)}
           </div>
         </div>
-      
       </div>
       <div className="chat-feed">
         <div style={{ height: "100px" }} />
