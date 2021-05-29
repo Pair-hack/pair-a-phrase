@@ -3,7 +3,6 @@ import stringTranslator from "../helperfunctions/stringTranslator";
 
 function IncomingMessage({ lastMessage, message }) {
   const [translatedMessage, setTranslatedMessage] = useState("");
-  const [ogMessage, setOgMessage] = useState("");
   //i dont know why formating is doing this
   const isFirstMessageFromOther =
     !lastMessage || lastMessage.sender.username !== message.sender.username;
@@ -21,10 +20,6 @@ function IncomingMessage({ lastMessage, message }) {
       setTranslatedMessage(response.data[0].translations[1].text);
     });
   }, [message]);
-
-  useEffect(()=>{
-    setOgMessage(message.text);
-  }, [message])
 
   return (
     <div className="message-row">
@@ -49,7 +44,7 @@ function IncomingMessage({ lastMessage, message }) {
           backgroundColor: "#FF5C83",
         }}
       >
-        <p style={{fontStyle: "italic", color: "gold", fontSize: "13px"}}>{JSON.parse(message.custom_json)} > {ogMessage}</p>
+        <p style={{fontStyle: "italic", color: "gold", fontSize: "13px"}}>{JSON.parse(message.custom_json)} > {message.text}</p>
         <p>{translatedMessage}</p>
       </div>
     </div>
