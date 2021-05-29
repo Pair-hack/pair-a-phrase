@@ -44,7 +44,7 @@ function IncomingMessage({ lastMessage, message }) {
           backgroundColor: "#FF5C83",
         }}
       >
-        <p style={{fontStyle: "italic", color: "gold", fontSize: "13px"}}>{JSON.parse(message.custom_json)} > {message.text}</p>
+        <p style={{fontStyle: "italic", color: "gold", fontSize: "13px"}}>{JSON.parse(message.custom_json)} {'>'} {message.text}</p>
         <p>{translatedMessage}</p>
       </div>
     </div>
