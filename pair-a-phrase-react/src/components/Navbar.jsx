@@ -1,8 +1,20 @@
 import SimpleSelect from "./SimpleSelect";
 import LogoutButton from "./LogOutButton";
+import randomLang from "../helperfunctions/randomLang";
+import stringTranslator from "../helperfunctions/stringTranslator";
+import { useState } from "react";
 
 function Navbar() {
   // could include image check here
+  const [translation, setTranslation] = useState("paraphrase");
+
+  const RL = randomLang();
+  stringTranslator("paraphrase", 'en', RL )
+  .then((response)=>{
+    console.log("that little bit of text?", response.data[0].translations[1].text);
+    setTranslation(response.data[0].translations[1].text);
+  });
+
   return (
     <div
       style={{
@@ -41,12 +53,12 @@ function Navbar() {
               whiteSpace: "nowrap",
               color: "white",
               marginLeft: "5px",
-              marginBottom: "-8px",
+              marginBottom: "-6px",
             }}
           >
             Pair-a-Phrase
           </h1>
-          <p style={{ marginLeft: "8px" }}>en > paraphrase</p>
+          <p style={{ marginLeft: "8px" }}>{RL} > {translation}</p>
           </div>
       </div>
       <div style={{
