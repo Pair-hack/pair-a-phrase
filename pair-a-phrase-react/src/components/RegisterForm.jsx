@@ -12,30 +12,6 @@ const RegisterForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    //   const authObject = { 'Project-ID': "8b2efd59-f1b9-458d-89d4-616c2e6e6713", 'User-Name': username, 'User-Secret': password }
-
-    //   axios.get('https://api.chatengine.io/users/me/', { headers: authObject})
-    //     .then((result) => {
-    //       if(result){
-    //         console.log('result in RegisterForm: ', result);
-    //         setError('Oh no! Username already exists.');
-    //       } else {
-    //         axios.post('/register', {
-    //           "username": username,
-    //           "secret": password,
-    //           "first_name": firstName,
-    //           "last_name": lastName,
-    //           "avatar": avatar,
-    //         }).then(() => {
-    //           localStorage.setItem("username", username);
-    //           localStorage.setItem("password", password);
-    //           window.location.reload();
-    //         });
-    //       }
-    //     }).catch((error) => {
-    //       console.log(error)
-    //     });
     axios
       .post("/register", {
         username: username,

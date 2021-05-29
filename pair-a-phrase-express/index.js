@@ -66,59 +66,30 @@ App.post('/register', (req, res) => {
 
   const data = {
     "username": `${username}`,
-	  "secret": `${secret}`,
+    "secret": `${secret}`,
     "first_name": `${first_name}`,
     "last_name": `${last_name}`,
     // "avatar": `${avatar}`
   };
-  
+
   const config = {
     method: 'post',
     url: 'https://api.chatengine.io/users/',
     headers: {
       'PRIVATE-KEY': process.env.PRIVATE_KEY
     },
-    data : data
+    data: data
   };
-  
+
   axios(config)
-  .then(function (response) {
-    console.log("JSON Stringfy: ", response.data);
-    return res.json(response.data)
-  })
-  .catch(function (error) {
-    console.log("Catch Error: ", error);
-    return res.json(error.response.data.message)
-  });
-
-  // const authObject = { "PRIVATE-KEY": "a1658897-7d30-4c58-a8f0-7ae5738f4e85" }
-  // const data = {
-  //   "username": req.body.username,
-  //   "secret": req.body.password,
-  //   "first_name": req.body.firstName,
-  //   "last_name": req.body.lastName,
-  //   "avatar": req.body.avatar,
-  // }
-
-  // axios.post('https://api.chatengine.io/users/', data , { headers: authObject },)
-  //   .then((result) => {
-  //     console.log('registration was successful: ', result.data);
-  //     return res.send(result.data);
-  //   }).catch((err) => {console.log('axios call error: ', err );})
-
-  // axios({
-  //   method: 'post',
-  //   url: 'https://api.chatengine.io/users/',
-  //   headers: { "PRIVATE-KEY": "a1658897-7d30-4c58-a8f0-7ae5738f4e85" },
-  //   data: {
-  //     "username": req.body.username,
-  //     "secret": req.body.password,
-  //     "first_name": req.body.firstName,
-  //     "last_name": req.body.lastName,
-  //     "avatar": req.body.avatar
-  //   }
-  // });
-
+    .then(function(response) {
+      console.log("JSON Stringfy: ", response.data);
+      return res.json(response.data)
+    })
+    .catch(function(error) {
+      console.log("Catch Error: ", error);
+      return res.json(error.response.data.message)
+    });
 
 });
 
