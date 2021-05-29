@@ -8,8 +8,8 @@ import Navbar from './components/Navbar';
 import RegisterForm from "./components/RegisterForm";
 
 function App() {
-  // if (!localStorage.getItem("username")) return <LoginForm />
-  if (!localStorage.getItem("username")) return < RegisterForm />
+  if (!localStorage.getItem("username")) return <LoginForm />
+  // if (!localStorage.getItem("username")) return < RegisterForm />
 
 
   // stringTranslator("This app is great", "en", "fj")
