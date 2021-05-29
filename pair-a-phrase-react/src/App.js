@@ -1,6 +1,6 @@
 import './App.css';
 import { ChatEngine } from 'react-chat-engine';
-import stringTranslator from "./helperfunctions/stringTranslator";
+// import stringTranslator from "./helperfunctions/stringTranslator";
 import ChatFeed from './components/ChatFeed';
 import LoginForm from "./components/LoginForm";
 import Dropdown from "./components/SimpleSelect";
