@@ -1,5 +1,4 @@
 import SimpleSelect from "./SimpleSelect";
-import pearImage from "./pear.png";
 
 function Navbar() {
   // could include image check here
@@ -31,7 +30,8 @@ function Navbar() {
             marginRight: "5px",
             marginTop: "0.8%",
           }}
-          src={pearImage}
+          alt="pear logo"
+          src="pear.png"
         />
 
         <h1

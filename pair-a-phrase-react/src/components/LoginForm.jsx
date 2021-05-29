@@ -31,7 +31,12 @@ const LoginForm = () => {
   return (
     <div className="wrapper">
       <div className="form">
-        <h1 className="title">Chat Application</h1>
+        <img
+          style={{ width: "60%", marginLeft: "18%", marginBottom: "30px" }}
+          src="pear.png"
+          alt="pair-logo"
+        />
+        <h1 className="title">Pair-A-Phrase</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -49,9 +54,27 @@ const LoginForm = () => {
             placeholder="password"
             required
           />
-          <div>Select the language you wish to chat in</div>
-          <SimpleSelect />
-          <div align="center">
+          <div
+            align="center"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              color: "white",
+              fontSize: "1.3rem",
+            }}
+          >
+            Select the language you wish to chat in:
+            <div
+              style={{
+                marginLeft: "75px",
+                marginTop: "10px",
+                marginBottom: "10px",
+              }}
+            >
+              <SimpleSelect />
+            </div>
             <button type="submit" className="button">
               <span>Start Chatting</span>
             </button>
