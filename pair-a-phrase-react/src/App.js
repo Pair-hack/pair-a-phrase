@@ -5,10 +5,12 @@ import ChatFeed from './components/ChatFeed';
 import LoginForm from "./components/LoginForm";
 import Dropdown from "./components/SimpleSelect";
 import Navbar from './components/Navbar';
-
+import RegisterForm from "./components/RegisterForm";
 
 function App() {
-  if (!localStorage.getItem("username")) return <LoginForm />
+  // if (!localStorage.getItem("username")) return <LoginForm />
+  if (!localStorage.getItem("username")) return < RegisterForm />
+
 
   // stringTranslator("This app is great", "en", "fj")
   //   .then((response) => {
