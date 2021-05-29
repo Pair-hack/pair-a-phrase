@@ -114,10 +114,12 @@ function ChatFeed(props) {
           flexDirection: "row",
           position: "absolute",
           justifyContent: "space-between",
-          backgroundColor: "#A48FC0",
+          backgroundColor: "#bed37c",
           textAlign: "space",
           marginTop: "0px",
           width: "100%",
+          borderBottomRightRadius: "10px",
+          borderBottomLeftRadius: "10px",
         }}
       >
         <div>
