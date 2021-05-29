@@ -65,7 +65,7 @@ function Navbar() {
           >
             Pair-a-Phrase
           </h1>
-          <p style={{ marginLeft: "8px" }}>{RL} > {translation}</p>
+          <p style={{ marginLeft: "8px", fontStyle: "italic" }}>{RL} > {translation}</p>
           </div>
       </div>
       <div style={{ display: "flex", justifyContent: "row" }}>
