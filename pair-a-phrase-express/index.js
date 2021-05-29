@@ -12,7 +12,7 @@ App.use(BodyParser.urlencoded({ extended: true }));
 App.use(BodyParser.json());
 
 
-App.post('/translate', function (req, res) {
+App.post('/translate', (req, res) => {
   console.log("req from backend: ", req.body);
 
   const string = req.body.string;
@@ -51,6 +51,39 @@ App.post('/translate', function (req, res) {
     console.log('result from backend: ', result.data);
     return res.send(result.data);
   })
+});
+
+App.post('/register', (req, res) => {
+  console.log('req.body in register: ', req.body);
+  const authObject = { "PRIVATE-KEY": "a1658897-7d30-4c58-a8f0-7ae5738f4e85" }
+  const data = {
+    "username": req.body.username,
+    "secret": req.body.password,
+    "first_name": req.body.firstName,
+    "last_name": req.body.lastName,
+    "avatar": req.body.avatar,
+  }
+
+  axios.post('https://api.chatengine.io/users/', data , { headers: authObject },)
+    .then((result) => {
+      console.log('registration was successful: ', result.data);
+      return res.send(result.data);
+    })
+
+  // axios({
+  //   method: 'post',
+  //   url: 'https://api.chatengine.io/users/',
+  //   headers: { "PRIVATE-KEY": "a1658897-7d30-4c58-a8f0-7ae5738f4e85" },
+  //   data: {
+  //     "username": req.body.username,
+  //     "secret": req.body.password,
+  //     "first_name": req.body.firstName,
+  //     "last_name": req.body.lastName,
+  //     "avatar": req.body.avatar
+  //   }
+  // });
+
+
 });
 
 
