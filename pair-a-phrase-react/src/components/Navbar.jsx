@@ -1,13 +1,16 @@
 import SimpleSelect from "./SimpleSelect";
-import pearImage from "./pear.png"
+import pearImage from "./pear.png";
 
 function Navbar() {
   // could include image check here
   return (
     <div
       style={{
+        position: "fixed",
+        zIndex: "1",
         background: "#f9c94c",
-        height: "70px",
+        Height: "50px",
+
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
@@ -17,20 +20,31 @@ function Navbar() {
         width: "100%",
       }}
     >
-      <h1 style={{
-        color: "white",
-        marginLeft: "3%",
-        paddingTop: "13px"
-      }}>Pair-A-Phrase</h1>
-      <img style={{
-        width: "40px",
-        height: "40px",
-        marginRight: "68%",
-        marginTop: "0.8%"
-  
-   
-      }} src={pearImage}/>
-      <SimpleSelect/>
+      <div
+        style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+      >
+        <img
+          style={{
+            width: "40px",
+            height: "40px",
+            marginLeft: "10px",
+            marginRight: "5px",
+            marginTop: "0.8%",
+          }}
+          src={pearImage}
+        />
+
+        <h1
+          style={{
+            whiteSpace: "nowrap",
+            color: "white",
+            marginLeft: "5px",
+          }}
+        >
+          Pair-A-Phrase
+        </h1>
+      </div>
+      <SimpleSelect />
     </div>
   );
 }

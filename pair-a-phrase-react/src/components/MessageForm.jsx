@@ -1,6 +1,6 @@
 import { SendOutlined } from "@ant-design/icons";
 import { useState } from "react";
-import { sendMessage, isTyping } from "react-chat-engine";
+import { sendMessage } from "react-chat-engine";
 
 function MessageForm(props) {
   const [inputVal, setInputVal] = useState("");
@@ -23,8 +23,6 @@ function MessageForm(props) {
   };
   const onChangeHandler = (event) => {
     setInputVal(event.target.value);
-
-    isTyping(props, chatId);
   };
 
   return (
