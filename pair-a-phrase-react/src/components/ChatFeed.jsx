@@ -1,12 +1,23 @@
 import MessageForm from "./MessageForm";
 import UserMessage from "./UserMessage";
 import IncomingMessage from "./IncomingMessage";
+import { useEffect, useRef } from "react";
 
 function ChatFeed(props) {
   const { chats, activeChat, userName, messages } = props;
 
   //find current chat
   const chat = chats && chats[activeChat];
+
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   // const renderReadReciepts = (message, isMyMessage) => {
   //   return chat.people.map((person, index) => {
@@ -73,6 +84,7 @@ function ChatFeed(props) {
       <div className="message-form-container">
         <MessageForm {...props} chatId={activeChat} />
       </div>
+      <div ref={messagesEndRef} />
     </div>
   );
 }
