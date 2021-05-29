@@ -26,7 +26,7 @@ function MessageForm(props) {
   };
 
   return (
-    <form className="message-form" onSubmit={submitHandler}>
+    <form className="message-form" style={{ display: "flex", justifyContent: "space-between" }} onSubmit={submitHandler}>
       <input
         className="message-input"
         placeholder="send a message"
