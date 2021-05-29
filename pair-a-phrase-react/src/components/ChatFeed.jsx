@@ -69,7 +69,30 @@ function ChatFeed(props) {
     });
   };
 
-  if (!chat) return "...Loading....";
+  if (!chat)
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          position: "absolute",
+          justifyContent: "space-between",
+          backgroundColor: "#9DB750",
+          textAlign: "space",
+          marginTop: "0px",
+          height: "70px",
+          fontSize: "1.5rem",
+          padding: "8px",
+          borderRadius: "15px",
+          color: "white",
+          margin: "2px",
+        }}
+      >
+        You are not part of any chats right now,
+        <br />
+        Start a new one!
+      </div>
+    );
 
   return (
     <>
