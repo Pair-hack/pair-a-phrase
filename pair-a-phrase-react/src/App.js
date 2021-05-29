@@ -10,8 +10,7 @@ import RegisterForm from "./components/RegisterForm";
 
 function App() {
 
-  const [logNotReg, setLogNotReg] = useState(true)
-  //if (!localStorage.getItem("username")) return <LoginForm />
+  const [logNotReg, setLogNotReg] = useState(true);
   const setForm = () => {
     return setLogNotReg(prev => !prev)
   }
@@ -24,14 +23,6 @@ function App() {
       </div>
     )
   }
-
-
-
-
-  // stringTranslator("This app is great", "en", "fj")
-  //   .then((response) => {
-  //     console.log("stringTranslator: ", response.data[0].translations[1].text)
-  //   })
 
   return (
     <>
