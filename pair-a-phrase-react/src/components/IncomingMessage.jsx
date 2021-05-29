@@ -8,8 +8,15 @@ function IncomingMessage({ lastMessage, message }) {
     !lastMessage || lastMessage.sender.username !== message.sender.username;
 
   useEffect(() => {
+    //console.log(message.sender);
     // next step some how set this conditionally
-    stringTranslator(message.text, "en", "fr").then((response) => {
+    console.log(typeof JSON.parse(message.custom_json));
+
+    stringTranslator(
+      message.text,
+      JSON.parse(message.custom_json),
+      localStorage.getItem("language")
+    ).then((response) => {
       setTranslatedMessage(response.data[0].translations[1].text);
     });
   }, [message]);

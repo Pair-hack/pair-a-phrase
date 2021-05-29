@@ -23,6 +23,7 @@ function App() {
         projectID="8b2efd59-f1b9-458d-89d4-616c2e6e6713"
         userName={localStorage.getItem("username")}
         userSecret={localStorage.getItem("password")}
+        language={localStorage.getItem("language")}
         renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
       />
     </>
