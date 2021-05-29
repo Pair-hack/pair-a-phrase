@@ -2,18 +2,22 @@ import SimpleSelect from "./SimpleSelect";
 import LogoutButton from "./LogOutButton";
 import randomLang from "../helperfunctions/randomLang";
 import stringTranslator from "../helperfunctions/stringTranslator";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Navbar() {
   // could include image check here
-  const [translation, setTranslation] = useState("paraphrase");
+  const [translation, setTranslation] = useState("");
+  const [RL, setRL] = useState("");
 
-  const RL = randomLang();
-  stringTranslator("paraphrase", 'en', RL )
-  .then((response)=>{
-    console.log("that little bit of text?", response.data[0].translations[1].text);
-    setTranslation(response.data[0].translations[1].text);
-  });
+  useEffect(()=>{
+    setRL(randomLang());
+    console.log(RL);
+    stringTranslator("paraphrase", 'en', RL )
+    .then((response)=>{
+      setTranslation(response.data[0].translations[1].text);
+      console.log(response.data[0].translations[1].text);
+    });
+  }, []);
 
   return (
     <div
