@@ -23,8 +23,7 @@ function IncomingMessage({ lastMessage, message }) {
   }, [message]);
 
   useEffect(()=>{
-    setOgMessage(message);
-    console.log("this is the original message", message);
+    setOgMessage(message.text);
   }, [message])
 
   return (
@@ -50,7 +49,7 @@ function IncomingMessage({ lastMessage, message }) {
           backgroundColor: "#FF5C83",
         }}
       >
-        <p style={{fontStyle: "italic", color: "gold", fontSize: "13px"}}>{JSON.parse(ogMessage.custom_json)} > {ogMessage.text}</p>
+        <p style={{fontStyle: "italic", color: "gold", fontSize: "13px"}}>{JSON.parse(message.custom_json)} > {ogMessage}</p>
         <p>{translatedMessage}</p>
       </div>
     </div>
