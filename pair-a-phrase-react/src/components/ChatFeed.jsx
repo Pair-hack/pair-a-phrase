@@ -1,6 +1,7 @@
 import MessageForm from "./MessageForm";
 import UserMessage from "./UserMessage";
 import IncomingMessage from "./IncomingMessage";
+import SimpleSelect from "./SimpleSelect";
 import { useEffect, useRef } from "react";
 
 function ChatFeed(props) {
@@ -12,12 +13,12 @@ function ChatFeed(props) {
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    messagesEndRef.current?.scrollIntoView();
   };
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [messages, chat]);
 
   // const renderReadReciepts = (message, isMyMessage) => {
   //   return chat.people.map((person, index) => {
@@ -72,20 +73,38 @@ function ChatFeed(props) {
   if (!chat) return "...Loading....";
 
   return (
-    <div className="chat-feed">
-      <div className="chat-title-container">
-        <div className="chat-title">{chat.title}</div>
-        <div className="chat-subtitle">
-          {chat.people.map((person) => `${person.person.username} `)}
+    <>
+      <div
+        className="chat-title-container"
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          position: "absolute",
+          justifyContent: "space-between",
+          backgroundColor: "grey",
+          textAlign: "space",
+          marginTop: "0px",
+          width: "100%",
+        }}
+      >
+        <div>
+          <div className="chat-title">{chat.title}</div>
+          <div className="chat-subtitle">
+            {chat.people.map((person) => `${person.person.username} `)}
+          </div>
         </div>
+        {/* <SimpleSelect /> */}
       </div>
-      {renderMessages()}
-      <div style={{ height: "100px" }} />
-      <div className="message-form-container">
-        <MessageForm {...props} chatId={activeChat} />
+      <div className="chat-feed">
+        <div style={{ height: "84px" }} />
+        {renderMessages()}
+        <div style={{ height: "100px" }} />
+        <div className="message-form-container">
+          <MessageForm {...props} chatId={activeChat} />
+        </div>
+        <div ref={messagesEndRef} />
       </div>
-      <div ref={messagesEndRef} />
-    </div>
+    </>
   );
 }
 

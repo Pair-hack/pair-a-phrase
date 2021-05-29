@@ -16,17 +16,18 @@ function IncomingMessage({ lastMessage, message }) {
 
   return (
     <div className="message-row">
-      {isFirstMessageFromOther && (
-        <div
-          className="message-avatar"
-          style={{
-            color: "black",
-            backgroundImage: `url(${message?.sender?.avatar})`,
-          }}
-        >
-          {message.sender.first_name}:
-        </div>
-      )}
+      {isFirstMessageFromOther &&
+        (message.sender.avatar ? (
+          <div
+            className="message-avatar"
+            style={{
+              color: "black",
+              backgroundImage: `url(${message?.sender?.avatar})`,
+            }}
+          ></div>
+        ) : (
+          <div>{message.sender.first_name}:</div>
+        ))}
       <div
         className="message"
         style={{
