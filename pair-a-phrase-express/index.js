@@ -76,7 +76,7 @@ App.post('/register', (req, res) => {
     method: 'post',
     url: 'https://api.chatengine.io/users/',
     headers: {
-      'PRIVATE-KEY': 'a1658897-7d30-4c58-a8f0-7ae5738f4e85'
+      'PRIVATE-KEY': process.env.PRIVATE_KEY
     },
     data : data
   };

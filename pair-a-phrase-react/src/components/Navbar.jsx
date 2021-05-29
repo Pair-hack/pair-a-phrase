@@ -45,10 +45,7 @@ function Navbar() {
           Pair-A-Phrase
         </h1>
       </div>
-      <div style={{
-            display: "flex",
-            justifyContent: "row"
-          }}>
+      <div style={{ display: "flex", justifyContent: "row" }}>
         <SimpleSelect />
         <LogoutButton />
       </div>
