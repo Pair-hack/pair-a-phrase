@@ -2,16 +2,18 @@ import './App.css';
 import { ChatEngine } from 'react-chat-engine';
 import stringTranslator from "./helperfunctions/stringTranslator";
 import ChatFeed from './components/ChatFeed';
-import LoginForm from "./components/LoginForm";
+// import LoginForm from "./components/LoginForm";
+import RegisterForm from "./components/RegisterForm";
 
 
 function App() {
-  if(!localStorage.getItem("username")) return <LoginForm/>
+  // if(!localStorage.getItem("username")) return <LoginForm/>
+  if(!localStorage.getItem("username")) return <RegisterForm/>
 
-  stringTranslator("This app is great", "en", "fj")
-    .then((response) => {
-      console.log("stringTranslator: ", response.data[0].translations[1].text)
-    })
+  // stringTranslator("This app is great", "en", "fj")
+  //   .then((response) => {
+  //     console.log("stringTranslator: ", response.data[0].translations[1].text)
+  //   })
 
   return (
     <ChatEngine
