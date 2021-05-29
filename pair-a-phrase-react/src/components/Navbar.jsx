@@ -1,4 +1,5 @@
 import SimpleSelect from "./SimpleSelect";
+import LogoutButton from "./LogOutButton";
 
 function Navbar() {
   // could include image check here
@@ -44,7 +45,13 @@ function Navbar() {
           Pair-A-Phrase
         </h1>
       </div>
-      <SimpleSelect />
+      <div style={{
+            display: "flex",
+            justifyContent: "row"
+          }}>
+        <SimpleSelect />
+        <LogoutButton />
+      </div>
     </div>
   );
 }
