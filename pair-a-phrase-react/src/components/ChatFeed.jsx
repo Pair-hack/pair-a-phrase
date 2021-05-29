@@ -87,7 +87,18 @@ function ChatFeed(props) {
           color: "white",
           margin: "2px",
         }}
-      >
+      >  
+      <img
+        style={{
+          width: "40px",
+          height: "40px",
+          marginLeft: "-10px",
+          marginRight: "0px",
+          marginTop: "0.8%",
+        }}
+        alt="left arrow"
+        src="leftArrow.gif"
+      />
         You are not part of any chats right now,
         <br />
         Start a new one!
