@@ -1,10 +1,11 @@
-import Button from '@material-ui/core/Button';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import { makeStyles } from '@material-ui/core/styles';
+import Button from "@material-ui/core/Button";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   button: {
-    margin: theme.spacing(1),
+    marginTop: "15px",
+    marginRight: "10px",
   },
 }));
 
@@ -14,11 +15,11 @@ const LogoutButton = () => {
     localStorage.removeItem("username");
     localStorage.removeItem("password");
     window.location.reload();
-  }
+  };
 
   return (
     <div>
-       <Button
+      <Button
         variant="contained"
         color="default"
         className={classes.button}
@@ -28,8 +29,7 @@ const LogoutButton = () => {
         Logout
       </Button>
     </div>
-  )
-
-}
+  );
+};
 
 export default LogoutButton;
