@@ -42,7 +42,7 @@ function Navbar() {
             marginLeft: "5px",
           }}
         >
-          Pair-A-Phrase
+          Pair-A-Phrase 
         </h1>
       </div>
       <div style={{ display: "flex", justifyContent: "row" }}>
