@@ -1,12 +1,23 @@
 import MessageForm from "./MessageForm";
 import UserMessage from "./UserMessage";
 import IncomingMessage from "./IncomingMessage";
+import { useEffect, useRef } from "react";
 
 function ChatFeed(props) {
-  const { chats, activeChat, userName, messages } = props;
+  const { chats, activeChat, userName, messages, language } = props;
 
   //find current chat
   const chat = chats && chats[activeChat];
+
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView();
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, chat]);
 
   // const renderReadReciepts = (message, isMyMessage) => {
   //   return chat.people.map((person, index) => {
@@ -28,7 +39,7 @@ function ChatFeed(props) {
 
     return keys.map((key, index) => {
       const message = messages[key];
-      console.log(message);
+
       const lastMessageKey = index === 0 ? null : keys[index - 1];
       const isUserMessage = userName === message.sender.username;
 
@@ -61,19 +72,42 @@ function ChatFeed(props) {
   if (!chat) return "...Loading....";
 
   return (
-    <div className="chat-feed">
-      <div className="chat-title-container">
-        <div className="chat-title">{chat.title}</div>
-        <div className="chat-subtitle">
-          {chat.people.map((person) => `${person.person.username}`)}
+    <>
+      <div
+        className="chat-title-container"
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          position: "absolute",
+          justifyContent: "space-between",
+          backgroundColor: "#A48FC0",
+          textAlign: "space",
+          marginTop: "0px",
+          width: "100%",
+        }}
+      >
+        <div>
+          <div style={{
+            color: "white"
+          }} className="chat-title">{chat.title}</div>
+          <div className="chat-subtitle" style={{
+            color: "white"
+          }}>
+            {chat.people.map((person) => `${person.person.username} `)}
+          </div>
         </div>
+      
       </div>
-      {renderMessages()}
-      <div style={{ height: "100px" }} />
-      <div className="message-form-container">
-        <MessageForm {...props} chatId={activeChat} />
+      <div className="chat-feed">
+        <div style={{ height: "100px" }} />
+        {renderMessages()}
+        <div style={{ height: "100px" }} />
+        <div className="message-form-container">
+          <MessageForm {...props} chatId={activeChat} />
+        </div>
+        <div ref={messagesEndRef} />
       </div>
-    </div>
+    </>
   );
 }
 

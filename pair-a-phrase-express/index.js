@@ -12,13 +12,13 @@ App.use(BodyParser.urlencoded({ extended: true }));
 App.use(BodyParser.json());
 
 
-App.post('/translate', (req, res) => {
+App.post('/translate', function(req, res) {
   console.log("req from backend: ", req.body);
 
   const string = req.body.string;
   const startLang = req.body.startLang;
   const endLang = req.body.endLang;
-  
+
   const subscriptionKey = process.env.SUBSCRIPTION_KEY
   var endpoint = "https://api.cognitive.microsofttranslator.com"
 
@@ -51,6 +51,7 @@ App.post('/translate', (req, res) => {
     console.log('result from backend: ', result.data);
     return res.send(result.data);
   })
+    .catch(err => console.log('translation err: ', err))
 });
 
 App.post('/register', (req, res) => {
@@ -87,6 +88,6 @@ App.post('/register', (req, res) => {
 });
 
 
-App.listen(PORT, function () {
+App.listen(PORT, function() {
   console.log(`Example app listening on port ${PORT}!`);
 });

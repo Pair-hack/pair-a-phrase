@@ -304,3 +304,7 @@ CHAT STYLES * {
   text-align: center;
   margin-top: 20px;
 }
+.chat-feed::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
