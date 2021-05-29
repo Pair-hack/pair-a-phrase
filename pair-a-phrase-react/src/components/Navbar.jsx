@@ -35,15 +35,19 @@ function Navbar() {
           src="pear.png"
         />
 
-        <h1
-          style={{
-            whiteSpace: "nowrap",
-            color: "white",
-            marginLeft: "5px",
-          }}
-        >
-          Pair-A-Phrase
-        </h1>
+        <div>
+          <h1
+            style={{
+              whiteSpace: "nowrap",
+              color: "white",
+              marginLeft: "5px",
+              marginBottom: "-8px",
+            }}
+          >
+            Pair-a-Phrase
+          </h1>
+          <p style={{ marginLeft: "8px" }}>en > paraphrase</p>
+          </div>
       </div>
       <div style={{
             display: "flex",
