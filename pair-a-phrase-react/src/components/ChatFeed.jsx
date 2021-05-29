@@ -1,7 +1,6 @@
 import MessageForm from "./MessageForm";
 import UserMessage from "./UserMessage";
 import IncomingMessage from "./IncomingMessage";
-import SimpleSelect from "./SimpleSelect";
 import { useEffect, useRef } from "react";
 
 function ChatFeed(props) {
@@ -81,22 +80,26 @@ function ChatFeed(props) {
           flexDirection: "row",
           position: "absolute",
           justifyContent: "space-between",
-          backgroundColor: "grey",
+          backgroundColor: "#A48FC0",
           textAlign: "space",
           marginTop: "0px",
           width: "100%",
         }}
       >
         <div>
-          <div className="chat-title">{chat.title}</div>
-          <div className="chat-subtitle">
+          <div style={{
+            color: "white"
+          }} className="chat-title">{chat.title}</div>
+          <div className="chat-subtitle" style={{
+            color: "white"
+          }}>
             {chat.people.map((person) => `${person.person.username} `)}
           </div>
         </div>
-        {/* <SimpleSelect /> */}
+      
       </div>
       <div className="chat-feed">
-        <div style={{ height: "84px" }} />
+        <div style={{ height: "100px" }} />
         {renderMessages()}
         <div style={{ height: "100px" }} />
         <div className="message-form-container">
