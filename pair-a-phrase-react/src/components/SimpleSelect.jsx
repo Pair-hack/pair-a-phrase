@@ -1,27 +1,32 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
+    position: "absolute",
+    bottom: "350px",
+    right: "5%",
     margin: theme.spacing(1),
     minWidth: 120,
+    zIndex: "1",
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
   menuPaper: {
-    maxHeight: 150
-  }
+    maxHeight: 150,
+    position: "fixed",
+  },
 }));
 
 export default function SimpleSelect() {
   const classes = useStyles();
-  const [language, setLanguage] = React.useState('');
+  const [language, setLanguage] = React.useState("");
 
   const handleChange = (event) => {
     setLanguage(event.target.value);
