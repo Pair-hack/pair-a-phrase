@@ -214,7 +214,8 @@ CHAT STYLES * {
 }
 
 .wrapper {
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   width: 100%;
   background: hsla(75, 42%, 52%, 1);
 
@@ -269,7 +270,6 @@ CHAT STYLES * {
 .title {
   text-align: center;
   color: white;
-  margin-bottom: 30px;
   width: 100%;
   font-size: 2.3em;
 }
@@ -312,7 +312,7 @@ CHAT STYLES * {
 }
 
 .error {
-  color: white;
+  color: #96344b;
   text-align: center;
   margin-top: 20px;
 }

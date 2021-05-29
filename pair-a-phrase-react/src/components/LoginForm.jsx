@@ -2,10 +2,12 @@ import axios from "axios";
 import { useState } from "react";
 import SimpleSelect from "./SimpleSelect";
 
-const LoginForm = () => {
+const LoginForm = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  console.log(props.switchForms);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -37,6 +39,21 @@ const LoginForm = () => {
           alt="pair-logo"
         />
         <h1 className="title">Pair-A-Phrase</h1>
+        <div
+          align="center"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            color: "white",
+            fontSize: "1.3rem",
+            fontStyle: "italic",
+          }}
+        >
+          The Cross Language Chat Platform
+        </div>
+        <h2 className="error">{error}</h2>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -78,8 +95,17 @@ const LoginForm = () => {
             <button type="submit" className="button">
               <span>Start Chatting</span>
             </button>
+            <div>
+              Need an account? -
+              <a
+                style={{ color: "white" }}
+                href="/#"
+                onClick={props.switchForms}
+              >
+                Register here
+              </a>
+            </div>
           </div>
-          <h2 className="error">{error}</h2>
         </form>
       </div>
     </div>
