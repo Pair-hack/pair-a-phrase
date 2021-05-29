@@ -37,7 +37,7 @@ function MessageForm(props) {
         onSubmit={submitHandler}
       />
       <button type="submit" className="send-button">
-        <SendOutlined classname="send-icon" />
+        <SendOutlined className="send-icon" />
       </button>
     </form>
   );
