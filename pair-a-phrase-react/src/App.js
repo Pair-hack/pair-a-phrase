@@ -9,25 +9,8 @@ import Navbar from './components/Navbar';
 import RegisterForm from "./components/RegisterForm";
 
 function App() {
-<<<<<<< HEAD
-  const [logNotReg, setLogNotReg] = useState(true)
-  //if (!localStorage.getItem("username")) return <LoginForm />
-  const setForm = () => {
-    return setLogNotReg(prev => !prev)
-  }
-
-  if (!localStorage.getItem("username")) {
-    return (
-      <div>
-        {logNotReg && <LoginForm switchForms={setForm} />}
-        {logNotReg === false && <RegisterForm switchForms={setForm} />}
-      </div>
-    )
-  }
-=======
   if (!localStorage.getItem("username")) return <LoginForm />
   // if (!localStorage.getItem("username")) return < RegisterForm />
->>>>>>> b970862c03bf0f82e1281dddf2ca2945925fa620
 
 
   // stringTranslator("This app is great", "en", "fj")
