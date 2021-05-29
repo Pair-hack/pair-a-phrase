@@ -18,14 +18,16 @@ function App() {
   return (
     <>
       <Navbar />
-      <ChatEngine
-        height="100vh"
-        projectID="8b2efd59-f1b9-458d-89d4-616c2e6e6713"
-        userName={localStorage.getItem("username")}
-        userSecret={localStorage.getItem("password")}
-        language={localStorage.getItem("language")}
-        renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
-      />
+      <div style={{ paddingTop: '60px' }}>
+        <ChatEngine
+          height="calc(100vh - 60px)"
+          projectID="8b2efd59-f1b9-458d-89d4-616c2e6e6713"
+          userName={localStorage.getItem("username")}
+          userSecret={localStorage.getItem("password")}
+          language={localStorage.getItem("language")}
+          renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
+        />
+      </div>
     </>
   );
 }
