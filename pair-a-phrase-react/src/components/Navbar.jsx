@@ -1,8 +1,24 @@
 import SimpleSelect from "./SimpleSelect";
 import LogoutButton from "./LogOutButton";
+import randomLang from "../helperfunctions/randomLang";
+import stringTranslator from "../helperfunctions/stringTranslator";
+import { useEffect, useState } from "react";
 
 function Navbar() {
   // could include image check here
+  const [translation, setTranslation] = useState("");
+  const [RL, setRL] = useState("");
+
+  useEffect(()=>{
+    setRL(randomLang());
+    console.log(RL);
+    stringTranslator("paraphrase", 'en', RL )
+    .then((response)=>{
+      setTranslation(response.data[0].translations[1].text);
+      console.log(response.data[0].translations[1].text);
+    });
+  }, []);
+
   return (
     <div
       style={{
@@ -35,15 +51,19 @@ function Navbar() {
           src="pear.png"
         />
 
-        <h1
-          style={{
-            whiteSpace: "nowrap",
-            color: "white",
-            marginLeft: "5px",
-          }}
-        >
-          Pair-A-Phrase
-        </h1>
+        <div>
+          <h1
+            style={{
+              whiteSpace: "nowrap",
+              color: "white",
+              marginLeft: "5px",
+              marginBottom: "-6px",
+            }}
+          >
+            Pair-a-Phrase
+          </h1>
+          <p style={{ marginLeft: "8px" }}>{RL} > {translation}</p>
+          </div>
       </div>
       <div style={{ display: "flex", justifyContent: "row" }}>
         <SimpleSelect />
