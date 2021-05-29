@@ -8,12 +8,9 @@ import Select from "@material-ui/core/Select";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-  
     right: "30%",
     margin: theme.spacing(1),
     minWidth: 120,
-  
-
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -47,6 +44,7 @@ export default function SimpleSelect() {
           value={language}
           onChange={handleChange}
           MenuProps={{ classes: { paper: classes.menuPaper } }}
+          required
         >
           <MenuItem value={"af"}>🇿🇦 Afrikaans </MenuItem>
           <MenuItem value={"sq"}>🇦🇱 Albanian </MenuItem>

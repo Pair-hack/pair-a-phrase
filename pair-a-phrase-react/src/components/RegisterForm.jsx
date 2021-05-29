@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import SimpleSelect from "./SimpleSelect";
 
 const RegisterForm = (props) => {
   const [username, setUsername] = useState("");
@@ -61,7 +62,9 @@ const RegisterForm = (props) => {
   return (
     <div className="wrapper">
       <div className="form">
-        <h1 className="title"> Register Below! </h1>
+        <h1 style={{ marginBottom: "15px" }} className="title">
+          Register Below!
+        </h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -95,6 +98,20 @@ const RegisterForm = (props) => {
             placeholder="Last Name"
             required
           />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              color: "white",
+              fontSize: "1.3rem",
+            }}
+          >
+            <div>Select the language you wish to chat in:</div>
+            <div style={{ marginLeft: "75px" }}>
+              <SimpleSelect />
+            </div>
+          </div>
           {/* <input type="text"  value={avatar} onChange={(e) => setAvatar(e.target.value)} className="input" placeholder="Avatar URL" /> */}
           <div align="center">
             <button type="submit" className="button">
