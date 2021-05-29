@@ -39,7 +39,7 @@ function App() {
       <div style={{ paddingTop: '60px' }}>
         <ChatEngine
           height="calc(100vh - 60px)"
-          projectID="8b2efd59-f1b9-458d-89d4-616c2e6e6713"
+          projectID="cdfcaae0-589e-4c45-9e64-eb0897d1f7f7"
           userName={localStorage.getItem("username")}
           userSecret={localStorage.getItem("password")}
           language={localStorage.getItem("language")}
