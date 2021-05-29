@@ -7,6 +7,7 @@ const RegisterForm = () => {
   const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [avatar, setAvatar] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,6 +31,7 @@ const RegisterForm = () => {
             <input type="password"  value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required />
             <input type="text"  value={firstName} onChange={(e) => setFirstName(e.target.value)} className="input" placeholder="First Name" required />
             <input type="text"  value={lastName} onChange={(e) => setLastName(e.target.value)} className="input" placeholder="Last Name" required />
+            <input type="text"  value={avatar} onChange={(e) => setAvatar(e.target.value)} className="input" placeholder="Avatar URL" required />
             <div align="center">
               <button type="submit" className="button">
                 <span>Register Now</span>
