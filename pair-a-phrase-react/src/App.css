@@ -14,8 +14,8 @@ CHAT STYLES * {
 }
 
 .ce-active-chat-card {
-  background-color: #cabcdc !important;
-  border: 4px solid #cabcdc !important;
+  background-color: #bed37c !important;
+  border: 4px solid #bed37c !important;
   border-radius: 0px !important;
 }
 
@@ -34,7 +34,7 @@ CHAT STYLES * {
 
 .ce-primary-button {
   border-radius: 6px !important;
-  background-color: #7554a0 !important;
+  background-color: #FF5C83 !important;
   position: relative;
   bottom: 1px;
 }
