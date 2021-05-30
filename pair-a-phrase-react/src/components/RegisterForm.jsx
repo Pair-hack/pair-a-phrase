@@ -12,27 +12,31 @@ const RegisterForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post("/register", {
-        username: username,
-        secret: password,
-        first_name: firstName,
-        last_name: lastName,
-        // "avatar": avatar,
-      })
-      .then((response) => {
-        if (response.data === "This username is taken.") {
-          return setError(response.data);
-        }
-        console.log("response in then in registerform", response);
-        localStorage.setItem("username", username);
-        localStorage.setItem("password", password);
-        window.location.reload();
-      })
-      .catch((error) => {
-        console.log("Catch Error: ", error);
-        // setError(error)
-      });
+    if (localStorage.getItem("language") === "null") {
+      return setError("Please select a language");
+    } else {
+      axios
+        .post("/register", {
+          username: username,
+          secret: password,
+          first_name: firstName,
+          last_name: lastName,
+          // "avatar": avatar,
+        })
+        .then((response) => {
+          if (response.data === "This username is taken.") {
+            return setError(response.data);
+          }
+          console.log("response in then in registerform", response);
+          localStorage.setItem("username", username);
+          localStorage.setItem("password", password);
+          window.location.reload();
+        })
+        .catch((error) => {
+          console.log("Catch Error: ", error);
+          // setError(error)
+        });
+    }
   };
 
   return (
