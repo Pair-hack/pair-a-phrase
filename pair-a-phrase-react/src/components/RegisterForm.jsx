@@ -16,7 +16,7 @@ const RegisterForm = (props) => {
       return setError("Please select a language");
     } else {
       axios
-        .post("/register", {
+        .post("https://pair-a-phrase-api.herokuapp.com/register", {
           username: username,
           secret: password,
           first_name: firstName,
