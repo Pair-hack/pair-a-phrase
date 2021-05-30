@@ -63,9 +63,9 @@ function Navbar() {
               marginBottom: "-6px",
             }}
           >
-            Pair-a-Phrase
+            Pair-A-Phrase
           </h1>
-          <p style={{ marginLeft: "8px", color: "#844438" }}>
+          <p style={{ marginLeft: "8px", color: "#844438", fontStyle: "italic" }}>
             {RL} {">"} {translation}
           </p>
         </div>
