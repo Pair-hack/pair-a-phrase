@@ -9,7 +9,7 @@
   #publish = "/pair-a-phrase-react/build"
 
   # Default build command.
-  command = "CI=false npm run build"
+  command = "CI= npm run build"
 
 [build.environment]
   REACT_APP_API_BASE_URL = "https://pair-a-phrase-api.herokuapp.com/"
