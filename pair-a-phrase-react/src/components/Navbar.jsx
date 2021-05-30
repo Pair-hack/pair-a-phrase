@@ -3,20 +3,20 @@ import LogoutButton from "./LogOutButton";
 import randomLang from "../helperfunctions/randomLang";
 import stringTranslator from "../helperfunctions/stringTranslator";
 import { useEffect, useState } from "react";
+import SubdirectoryArrowRightIcon from "@material-ui/icons/SubdirectoryArrowRight";
 
 function Navbar() {
   // could include image check here
   const [translation, setTranslation] = useState("");
   const [RL, setRL] = useState("");
 
-  useEffect(()=>{
+  useEffect(() => {
     setRL(randomLang());
     console.log(RL);
   }, []);
 
-  useEffect(()=>{
-    stringTranslator("paraphrase", 'en', RL )
-    .then((response)=>{
+  useEffect(() => {
+    stringTranslator("paraphrase", "en", RL).then((response) => {
       setTranslation(response.data[0].translations[1].text);
       console.log(response.data[0].translations[1].text);
     });
@@ -65,8 +65,10 @@ function Navbar() {
           >
             Pair-a-Phrase
           </h1>
-          <p style={{ marginLeft: "8px" }}>{RL} > {translation}</p>
-          </div>
+          <p style={{ marginLeft: "8px", color: "#844438" }}>
+            {RL} > {translation}
+          </p>
+        </div>
       </div>
       <div style={{ display: "flex", justifyContent: "row" }}>
         <SimpleSelect />

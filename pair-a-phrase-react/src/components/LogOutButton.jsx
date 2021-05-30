@@ -6,6 +6,11 @@ const useStyles = makeStyles((theme) => ({
   button: {
     marginTop: "15px",
     marginRight: "10px",
+    backgroundColor: "#9DB750",
+    "&:hover": {
+      backgroundColor: "#BED37C",
+      // boxShadow: "none",
+    },
   },
 }));
 
@@ -21,7 +26,6 @@ const LogoutButton = () => {
     <div>
       <Button
         variant="contained"
-        color="default"
         className={classes.button}
         startIcon={<ExitToAppIcon />}
         onClick={handleClick}
