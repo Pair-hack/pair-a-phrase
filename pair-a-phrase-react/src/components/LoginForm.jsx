@@ -96,9 +96,9 @@ const LoginForm = (props) => {
               <span>Start Chatting</span>
             </button>
             <div>
-              Need an account? -
+              Need an account?
               <a
-                style={{ color: "white" }}
+                style={{ color: "white", paddingLeft: "7px" }}
                 href="/#"
                 onClick={props.switchForms}
               >
