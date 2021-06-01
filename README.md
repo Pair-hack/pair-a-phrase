@@ -29,14 +29,17 @@ After the campaign ends, we would love to add the ability to include voice-to-te
 
 Thank you for checking out Pair-A-Phrase! Please click the Youtube link to watch a live demo of our app!
 
+!["chatting"](https://github.com/Pair-hack/pair-a-phrase/blob/master/pair-a-phrase-react/public/conversation.gif?raw=true)
+
+
 
 ## Tech stack
 
 JavaScrip, Node.js, Express.js, React, CSS, AXIOS
 
-Material UI, microsoft translator api, Cheatengine.io
+Material UI, microsoft translator api, Chatengine.io
 
 
 ## Video Demo
 
-[![Alt text](https://img.youtube.com/vi/VID/0.jpg)](https://www.youtube.com/watch?v=VID)
+[![Alt text](https://img.youtube.com/vi/8SXCoCe8_rI/0.jpg)](https://www.youtube.com/watch?v=8SXCoCe8_rI)
