@@ -33,8 +33,7 @@ Thank you for checking out Pair-A-Phrase! Please click the Youtube link to watch
 !["Login"](https://github.com/Pair-hack/pair-a-phrase/blob/master/pair-a-phrase-react/public/pair-a-phrase-home.png?raw=true)
 
 
-!["chatting"](https://github.com/Pair-hack/pair-a-phrase/blob/master/pair-a-phrase-react/public/conversation.gif?raw=true)
-
+<span><img src="https://github.com/Pair-hack/pair-a-phrase/blob/master/pair-a-phrase-react/public/conversation.gif?raw=true" width=600></span>
 
 ## Tech stack
 
