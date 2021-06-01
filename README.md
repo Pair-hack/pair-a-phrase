@@ -29,8 +29,11 @@ After the campaign ends, we would love to add the ability to include voice-to-te
 
 Thank you for checking out Pair-A-Phrase! Please click the Youtube link to watch a live demo of our app!
 
-!["chatting"](https://github.com/Pair-hack/pair-a-phrase/blob/master/pair-a-phrase-react/public/conversation.gif?raw=true)
 
+!["Login"](https://github.com/Pair-hack/pair-a-phrase/blob/master/pair-a-phrase-react/public/pair-a-phrase-home.png?raw=true)
+
+
+!["chatting"](https://github.com/Pair-hack/pair-a-phrase/blob/master/pair-a-phrase-react/public/conversation.gif?raw=true)
 
 
 ## Tech stack
