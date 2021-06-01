@@ -16,3 +16,27 @@ _by [Philip Hansen](https://github.com/P-Hansen), [Devin MacGillivray](https://g
 
 </div>
 <br>
+
+## Description
+
+Pair-A-Phrase is an inclusive messaging app that translates languages in real-time. This application allows users to set their language and send messages. Once sent, the message will be translated to whichever language the receiving user specifies. This allows users from all different cultures to have conversations like never before. 
+
+Connection begins with communication and this app is a building block to international and cross-cultural relationships without sacrificing one's linguistic heritage. In today's day and age, bilingualism is a luxury. Having access to Pair-A-Phrase creates a space for people coming from any and every walk of life to meet and connect, regardless of their background.
+
+As a team, we come from diverse backgrounds and we felt it was imperative to build a resource that simplifies connecting with people from all around the globe. Pair-A-Phrase has the ability to translate 90 languages with ease, allowing users to overcome language barriers like never before. Whether you speak Japanese, Gujarati, English, Portuguese, or Telugu, Pair-A-Phrase connects you with the world!
+
+After the campaign ends, we would love to add the ability to include voice-to-text translation for individuals who may have accessibility issues. As the world is changing and technology moves towards mobile, we would love to develop Pair-A-Phrase into an app.
+
+Thank you for checking out Pair-A-Phrase! Please click the Youtube link to watch a live demo of our app!
+
+
+## Tech stack
+
+JavaScrip, Node.js, Express.js, React, CSS, AXIOS
+
+Material UI, microsoft translator api, Cheatengine.io
+
+
+## Video Demo
+
+[![Alt text](https://img.youtube.com/vi/VID/0.jpg)](https://www.youtube.com/watch?v=VID)
