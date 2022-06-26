@@ -5,9 +5,9 @@
 
 ### The Cross Language Chat Platform
 
-## [Check it out live ](https://www.pair-a-phrase.com/)
+<!-- ## [Check it out live ](https://www.pair-a-phrase.com/) -->
 
-_Front end Hosted on Netlify, API database hosted on Heroku_
+_Front end Hosted on Netlify, API database hosted on Heroku_ *No longer hosted*
 
 ## Built in under 48 hours for the [Hackon 2.0 Global Hackathon](https://hackon.tech/)
 
